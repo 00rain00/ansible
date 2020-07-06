@@ -1,14 +1,12 @@
 ---
 #usage: ansible-playbook pb -k -K
 - name: playbook to rhel
-hosts: all
-become: yes
-become_user: root
-become_method: sudo
+  become: yes
+  hosts: all
 
-tasks:
-  - name:ssh key-based authorized login
-    authorized_key: user=root
-                    exclusive=no
-                    key="{{lookup('file', '~/.ssh/_id_rsa.pub')}}"
----
+  tasks:
+   - name: ssh key-based authorized login
+     authorized_key: user=root
+                     exclusive=no
+                     key="{{lookup('file', '~/.ssh/id_rsa.pub')}}"
+
