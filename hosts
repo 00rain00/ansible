@@ -1,2 +1,2 @@
-[osServer]
-192.168.3.3:80 ansiable_user=root
+[all]
+192.168.3.3:80 
